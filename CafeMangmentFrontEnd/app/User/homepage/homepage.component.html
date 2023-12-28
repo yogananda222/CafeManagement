@@ -1,0 +1,106 @@
+<!-- Header -->
+<header>
+  <section class="menu">
+    <div class="nav">
+      <div class="logo">
+        <img src="/assets/images/TRIBLEND-removebg-preview.png" alt="Cafe Management Logo">
+        <h1>TRIBLEND<b> CAFE</b></h1>
+      </div>
+
+
+      <button class="help" (click)="redirectToHelp()"><b>HELP</b></button>
+      <button class="book-table" (click)="redirectToBookTable()"><b>BOOK A TABLE</b></button>
+
+ 
+      <div class="profile-dropdown">
+        <button class="profile-button" (click)="toggleDropdown()" > <b>PROFILE</b>
+         <span>{{this.username}}</span>
+          <span class="arrow"></span>
+        </button>
+        <div class="dropdown-content" [class.visible]="isDropdownOpen" [class.hidden]="!isDropdownOpen">
+          <p>{{ this.username }}</p>
+          <button (click)="logout()">LOGOUT</button>
+        </div>
+      </div>
+      
+      </div>
+
+  </section>
+</header>
+
+<!-- Body -->
+<body>
+  <section>
+    <div class="user-info">
+      
+      <h1 style="font-size: 50px;">{{ this.username  }}  What's in your mind?</h1>
+      
+    </div>
+
+<!-- Image Carousel Section -->
+
+
+<!-- Image Carousel Section -->
+<div class="image-carousel">
+  <button class="arrow-button" (click)="navigateImage('backward')">&#9665;</button>
+  <div class="carousel-wrapper">
+      <div class="image-container" [style.transform]="'translateX(' + (-imageIndex * 25) + '%)'">
+          <!-- Use ngFor to loop through images -->
+          <a *ngFor="let image of images; let i = index" class="carousel-item" >
+              <img [src]="image" alt="carousel-image" style="width: 150px; max-height: 150px;">
+               
+                  <p class="item-name">{{specialItems[i]?.name}}</p>
+          </a>
+          
+      </div>
+  </div>
+  <button class="arrow-button" (click)="navigateImage('forward')">&#9655;</button>
+</div>
+
+  <!-- Special Items -->
+<div class="special-items">
+  <h2>Our Cafe Special Items</h2>
+  <!-- Display items with name, price, add button, quantity controls, and pop-up box -->
+  <div class="item" *ngFor="let item of specialItems">
+    <img [src]="item.image" alt="{{ item.name }}">
+    <p class="item-name">{{ item.name }}</p>
+    <p class="item-price">{{ item.price }}</p>
+    <button (click)="addToCart(item)">Add</button>
+  </div>
+</div>
+
+<!-- Regular Items -->
+<div class="regular-items">
+  <h2>Regular Items</h2>
+  <!-- Display items with name, price, add button, quantity controls, and pop-up box -->
+  <div class="item" *ngFor="let item of regularItems">
+    <img [src]="item.image" alt="{{ item.name }}">
+    <p class="item-name">{{ item.name }}</p>
+    <p class="item-price">{{ item.price }}</p>
+    <button (click)="addToCart(item)">Add</button>
+  </div>
+</div>
+
+<!-- ... (unchanged code) -->
+
+<div class="popup" *ngIf="showPopup">
+  <div class="popup-content">
+    <h2>Select Quantity</h2>
+    <!-- Loop through selected items in the pop-up -->
+    <div *ngFor="let item of cartItemsInPopup">
+      <p>{{ item.name }} - Quantity:
+        <button (click)="decreaseQuantityInPopup(item)">-</button>
+        <span>{{ item.quantity }}</span>
+        <button (click)="increaseQuantityInPopup(item)">+</button>
+        <button (click)="removeItemFromPopup(item)">Remove</button>
+      </p>
+
+    </div>
+    <p>Total: {{ calculateTotalInPopup() }}</p>
+    <button (click)="closePopup()">Cancel</button>
+    <button  routerLink="/itempage"    (click)="placeOrder()">Place Order</button>
+    <div class="close-btn" (click)="closePopup()"></div>
+  </div>
+</div>
+
+<!-- ... (unchanged code) -->

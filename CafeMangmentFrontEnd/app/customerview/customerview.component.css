@@ -1,0 +1,15 @@
+/* Add these styles to your CSS or style section */
+
+.back-button {
+    background-color: #dc3545; /* Set the background color of the button */
+    color: black; /* Set the text color of the button */
+    transition: background-color 0.3s ease; /* Add a smooth transition effect */
+
+    /* Optional: Add padding and border-radius for better visual appearance */
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+.back-button:hover {
+    background-color: #c82333; /* Change the background color on hover */
+}

@@ -1,0 +1,44 @@
+/* helppage.component.css */
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.faq-item {
+  margin-bottom: 20px;
+}
+
+.question {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.answer {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  
+}
+
+.answer p {
+  margin: 0;
+}
+
+.fa {
+  font-size: 18px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.fa-chevron-down {
+  transform: rotate(180deg);
+}

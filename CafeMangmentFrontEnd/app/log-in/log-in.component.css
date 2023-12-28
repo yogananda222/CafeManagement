@@ -1,0 +1,95 @@
+
+body{
+    background-color: #F2D2BD;
+     width:100%;
+     height: 100%;
+  }
+  
+  .finalimage {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  section {
+    display: flex;
+    justify-content: flex-end; /* Align content to the right */
+    align-items: center;
+    height: 10vh; 
+  }
+  
+  .title {
+    text-align: right 20px 20px; /* Align text to the right */
+    max-width: 600px; /* Set the maximum width for better responsiveness */
+    padding: 20px; /* Add padding for better spacing */
+  }
+  
+  .title h1 {
+    font-size: 2em; /* Set the desired font size for the heading */
+    margin-bottom: 10px; /* Adjust margin for spacing between heading and paragraph */
+    margin-top: 200px;
+    margin-right: 140px;
+  }
+  
+  .title p {
+    font-size: 1.2em; /* Set the desired font size for the paragraph */
+    margin-bottom: 0; /* Remove default margin for the paragraph */
+  }
+  
+  .login-form {
+    max-width: 200px;
+    margin-left:800px;
+    margin-top: 100px;
+    position: relative;
+    background-color: #df6d4aec;
+    padding: 20px;
+    border-radius: 10px; /* Add border-radius for rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+  }
+  
+  .form-group {
+    margin-bottom: 20px; /* Adjusted margin for better spacing */
+  }
+  
+  /*.triangle-images {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column; 
+  }
+  
+  .triangle-image {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+     Add additional styles as needed for your images 
+  } */
+  
+  .submit {
+    /* Fixed background-image to background-color */
+    color: rgb(19, 18, 18); /* Set text color to white for better visibility */
+    margin-left: 30%;
+  }
+  
+  /* Additional styles for text, links, etc. */
+  .bottom {
+    color: rgb(230, 215, 215);
+  }
+  
+  /* Adjustments for responsiveness */
+  @media (max-width: 768px) {
+    .login-form {
+      max-width: 100%;
+    }
+  
+    .triangle-images {
+      display: none; /* Hide images on smaller screens */
+    }
+  
+    
+  }
+  
+  
+  

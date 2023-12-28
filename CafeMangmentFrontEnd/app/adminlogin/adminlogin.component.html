@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+       
+      }
+
+      section {
+        background-image: url('assets/images/adminlogin.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        background-attachment: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .container-fluid {
+        padding: 20px;
+      }
+
+      .login-wrap {
+       
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+      }
+
+      .heading-section {
+        color: #fff;
+        margin-bottom: 20px;
+      }
+
+      .mb-4 {
+        margin-bottom: 4px;
+      }
+
+      .signin-form {
+        max-width: 300px;
+        margin: 0 auto;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        color: #fff;
+        font-weight: bold;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+
+      input:focus {
+        outline: none;
+        border-color: #007bff;
+      }
+
+      .error-message {
+        color: #dc3545;
+        margin-top: 5px;
+        font-size: 14px;
+      }
+
+      .submit {
+        background-image: linear-gradient(to right, #5e5656 5%, black 100%);
+        margin-top: 20px;
+        color: #b95e5e;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .submit:hover {
+        background-image: linear-gradient(to right, #4c4343 5%, #2b2727 100%);
+      }
+
+      .bottom {
+        font-size: 14px;
+        margin-top: 10px;
+        color: #b95e5e;
+      }
+
+      a.bottom {
+        text-decoration: none;
+        color:#b95e5e;
+      }
+
+      a.bottom:hover {
+        text-decoration: underline;
+      }
+
+      a.back-home {
+        color: #b95e5e;
+      }
+    </style>
+  </head>
+
+  <body>
+
+  <section class="ftco-section" style="
+  background-image: url('assets/images/adminlogin.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh ;
+  background-attachment: fixed;"
+>
+  <div class="container-fluid" style="padding: 50px; margin-right: 400px">
+    <div class="row justify-content-center">
+      <div class="col-md-6 text-center mb-5">
+        <h2 class="heading-section" style="margin-top: 20px;">
+        Welcome Admin Manager
+        </h2>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-4">
+        <div class="login-wrap p-0" style="padding: 0%">
+          <h3 class="mb-4 text-center" style="padding-left: 500px; color:aliceblue; font-size: 20px;"><strong>Have an account?</strong></h3>
+          <form
+          form #spForm="ngForm"
+          (ngSubmit)="Getlogin()"
+          class="signin-form"
+        >
+            <div class="form-group" style="color: black;">
+              <label for="username">User Name:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="username"
+                name="username"
+                [(ngModel)]="admin.username"
+                placeholder="Enter User Name"
+                required
+                minlength="5"
+                
+              />
+              <div class="error-message" *ngIf="spForm.controls['username'].invalid && (spForm.controls['username'].dirty || spForm.controls['username'].touched)">
+                <div *ngIf="spForm.controls['username']?.errors?.['required']">User Name is required.</div>
+                <div *ngIf="spForm.controls['username']?.errors?.['minlength']">User Name must contain at least 5 characters.</div>
+              </div>
+            </div>
+            <div class="form-group" style="color: black;">
+              <label for="password">Password:</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                name="password"
+                [(ngModel)]="admin.adminpassword"
+                placeholder="Enter password"
+                required
+                minlength="6"
+              />
+              <div class="error-message" *ngIf="spForm.controls['password'].invalid && (spForm.controls['password'].dirty || spForm.controls['password'].touched)">
+                <div *ngIf="spForm.controls['password']?.errors?.['required']">Password is required.</div>
+                <div *ngIf="spForm.controls['password']?.errors?.['minlength']">Password must contain at least 6 characters.</div>
+              </div>
+            </div>
+            <button
+              type="submit"
+              class="form-control btn 
+               submit px-3"
+              [disabled]="spForm.invalid"
+              style="
+                background-color:#04AA6D;
+                margin-top: 20px;
+                margin-bottom: 10px;
+                color: whitesmoke;"
+                
+            >
+              Login
+            </button>
+            <p class="bottom" style="color: rgb(185, 94, 94);">
+              Not an Admin..?
+              <a
+                class="bottom"
+                routerLink="log-in"
+                style="
+                  color: rgb(34, 23, 182);
+                  text-decoration: none;
+                  padding-left: 5px;
+                "
+              >
+                Click here
+              </a>
+            </p>
+            <p><a
+              class="bottom"
+              [routerLink]="['/']"
+              style="
+                color: rgb(34, 23, 182);
+              "
+            >
+              <strong>Back to Home....</strong>
+            </a></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>

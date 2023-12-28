@@ -1,0 +1,84 @@
+<!-- AddMenuComponent HTML -->
+
+<section>
+    <header>
+      <div class="logosec">
+        <div class="logo" style="padding-left: 470px; padding-bottom: 10px; font-size: 50px; font-style: italic;">Cafe Managemnt Admin</div>
+        <img src="assets/images/user2.png" class="icn menuicn" id="menuicn" alt="menu-icon" style="height: 150px; width : 150px; padding-left: 600px; padding-top: 30px;">
+      </div>
+    </header>
+   <!-- <div class="main-container">
+      <div class="navcontainer">
+        <nav class="nav">
+          <div class="nav-upper-options">
+            <div class="nav-option option3">
+              <a (click)="viewOrder()">
+                <img src="assets/images/provider.png" style="height: 350px; width : 350px; padding-left: 500px;" class="nav-img" alt="report">
+                <h3 style="margin-left: 20px" style = "padding-left: 500px;">Show Order</h3>
+              </a>
+            </div>
+            <div class="nav-option option4">
+              <a routerLink="/admin/payment/veiwall">
+                <img src="assets/images/transaction.png" style="height: 350px; width : 350px; padding-left: 500px;" class="nav-img" alt="institution">
+                <h3 style="margin-left: 20px" style = "padding-left: 500px;">Show Payments</h3>
+              </a>
+            </div>
+            <div class="nav-option option5">
+              <a (click)="addMenu()">
+                <img src="assets/images/transaction.png" style="height: 350px; width : 350px; padding-left: 500px;" class="nav-img" alt="institution">
+                <h3 style="margin-left: 20px" style = "padding-left: 500px;">Show Menu</h3>
+              </a>
+            </div>
+            <div class="nav-option option6">
+              <a (click)="logout()">
+                <img src="assets/images/logout.png" style="height: 350px; width : 350px; padding-left: 500px;" class="nav-img" alt="institution">
+                <h3 style="margin-left: 20px" style = "padding-left: 500px;">Logout</h3>
+              </a>
+            </div>
+          </div>
+        </nav>
+      </div> -->
+      <div class="main">
+        <div class="title-container">
+            <h3 style="padding-left: 500px;">All Customers</h3>
+        </div>
+        <div class="box-container">
+            <div class="section-content section-content-p30">
+                <div class="container-fluid">
+                    <div class="row">
+                        <table class="table table-curved solid" style=" margin-left: 500px; border: 1px solid #ddd; border-collapse: collapse;">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>PhNo.</th>
+                                    <th>Username</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tr *ngFor="let tempcust of customer | paginate: { itemsPerPage: count, currentPage: p }">
+                                <td style="border: 1px solid #ddd; padding: 8px;">{{tempcust.userId}}</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">{{tempcust.email}}</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">{{tempcust.userPhone}}</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">{{tempcust.username}}</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">
+                                    <button type="button" class="btn btn-md btn-danger" (click)="deleteCustomer(tempcust.userId)">Delete</button>
+                                </td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">
+                                    <button type="button" class="btn btn-md btn-danger" (click)="addUser()">Add</button>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="text-right mt-3">
+                            <button type="button" class="btn btn-md btn-danger" (click)="Back()" style="margin-left: 1050px; margin-top: 30px">Back</button>
+                        </div>
+                       
+                           
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </section>
+        

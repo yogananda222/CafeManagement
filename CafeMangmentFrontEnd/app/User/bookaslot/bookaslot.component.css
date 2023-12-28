@@ -1,0 +1,198 @@
+/* book-table.component.css */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* Set your desired background color */
+  padding: 10px 20px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-right: 20px; /* Adjust as needed */
+}
+
+.logo img {
+  max-width: 170px; /* Set your desired max-width for the image */
+  margin-right: 10px; /* Adjust as needed */
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 1.5em; 
+  content: Managemt ;
+}
+
+.logo h1 b{
+  color: #ff511c;
+}
+.profile-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-button {
+/*  background-color: #ff511c; */
+  background-color: #f2d2bd;
+  color: #080201;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.profile-button span {
+  margin-right: 5px;
+}
+
+.arrow {
+  font-size: 0.8em;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+}
+
+.dropdown-content.visible {
+  display: block;
+}
+
+.dropdown-content p,
+.dropdown-content button {
+  padding: 10px;
+  text-align: left;
+  width: 100%;
+  background-color: #f2d2bd;
+  border: #f2d2bd;
+ 
+  cursor: pointer;
+}
+
+.dropdown-content button {
+  color: #020202;
+}
+
+.profile-dropdown:hover .dropdown-content {
+  display: block;
+}
+.help {
+  
+  width: 100px;
+ 
+border: #f2d2bd;
+background-color: #f2d2bd;
+color:#020202;
+ text-align: right;
+ margin-left: 400px;
+ 
+}
+
+section {
+  /* Add section styling */
+  width: auto;
+}
+
+.searchQuery {
+  margin-right: 50px; /* Adjust the margin as needed */
+}
+
+.searchQuery input {
+  padding: 8px; /* Adjust the padding as needed */
+  width: 200px; /* Set the width as needed */
+  border: 1px solid #ccc; /* Add a border */
+  border-radius: 4px; /* Optional: Add border radius for rounded corners */
+}
+
+/* Optional: Adjust the color */
+.searchQuery input:focus {
+  outline: none; /* Remove the default focus outline */
+  border-color: #3498db; /* Change the border color on focus */
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5); /* Add a box shadow on focus */
+}
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f2d2bd;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  .booking-form {
+    background-color: #ff511c;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+  }
+  
+  h2 {
+    color: #333;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
+  
+  .successMessage{
+    margin-top:50px;
+    margin-bottom: 50px;
+  }

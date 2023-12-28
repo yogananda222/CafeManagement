@@ -1,0 +1,32 @@
+/* thank-you.component.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f7f7f7;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  .thank-you-message {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  h1 {
+    color: #4CAF50; /* Green color */
+  }
+  
+  p {
+    color: #333;
+  }
+  

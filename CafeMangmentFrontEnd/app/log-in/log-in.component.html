@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <style>
+      
+   </style>
+  </head>
+
+
+<body>
+
+  <section>
+    <div class="title">
+        <h1>Craving Something?</h1>
+        <p>Let's get you started !</p>
+    </div>
+  </section>
+  <section>
+    <div class="finalimage"> 
+      <img src="/assets/images/loginfinalimage.png" width="600px" >
+  
+    </div>
+  </section>
+
+
+<form
+  form #spForm="ngForm"
+  (ngSubmit)="loginuser()"
+  class="login-form"
+>
+
+  <!-- Username -->
+  <div class="form-group" style="color: black;">
+    <label for="username">User Name:</label>
+    <input
+      type="text"
+      class="form-control"
+      id="username"
+      name="username"
+      [(ngModel)]="user.username"
+      placeholder="Enter User Name"
+      required
+      minlength="6"
+      
+    />
+    <div
+      class="error-message"
+      *ngIf="
+        spForm.controls['username'].invalid &&
+        (spForm.controls['username'].dirty || spForm.controls['username'].touched)
+      "
+    >
+      <div *ngIf="spForm.controls['username']?.errors?.['minlength']">
+        User Name must contain at least 6 characters.
+      </div>
+    </div>
+  </div>
+
+  <!-- Password -->
+  <div class="form-group" style="color: black;">
+    <label for="password">Password:</label>
+    <input
+      type="password"
+      class="form-control"
+      id="password"
+      name="password"
+      [(ngModel)]="user.userpassword"
+      placeholder="Enter password"
+      required
+      pattern="^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$"
+    />
+    <div
+      class="error-message"
+      *ngIf="
+        spForm.controls['password'].invalid &&
+        (spForm.controls['password'].dirty || spForm.controls['password'].touched)
+      "
+    >
+      <div *ngIf="spForm.controls['password']?.errors?.['required']">
+        Password is required.
+      </div>
+      <div *ngIf="spForm.controls['password']?.errors?.['pattern']">
+        Password should be minimum 6 characters with combination of letters,
+        digits, and special characters.
+      </div>
+    </div>
+  </div>
+
+  <button type="submit"  routerLink="/homepage"   class="form-control btn btn-primary submit px-3" [disabled]="spForm.invalid">
+    <b>Login</b>  </button>
+  
+
+  <p class="bottom" style="color: rgb(28, 27, 27);">
+    Not a member? 
+    <a class="bottom" routerLink="/signup" style="color: rgb(14, 0, 0); text-decoration: none; padding-left: 5px;">Signup</a>
+  </p>
+  
+
+  <p>
+    <a class="bottom" routerLink="/" style="color: rgb(16, 15, 15);">
+      <strong>Back to Home....</strong>
+    </a>
+  </p>
+</form>
+
+</body>
+</html>
+
+ <!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-image: url('background-image.jpg'); /* Replace 'background-image.jpg' with your image path */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .login-container h2 {
+            color: #333;
+        }
+
+        .login-form {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-group button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Admin Login</h2>
+    <form class="login-form">
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-group">
+            <button type="submit">Login</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
+-->
+<!--<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f9fa; /* Set a light background color */
+      }
+
+      section {
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      .title {
+        color: #007bff; /* Set a primary color for the title */
+        margin-bottom: 20px;
+      }
+
+      .finalimage img {
+        width: 600px;
+      }
+
+      .login-form {
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: #fff; /* Set a white background color for the form */
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        color: #333; /* Set a dark color for the labels */
+        font-weight: bold;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+
+      input:focus {
+        outline: none;
+        border-color: #007bff; /* Set a focus color for the input fields */
+      }
+
+      .error-message {
+        color: #dc3545; /* Set a danger color for error messages */
+        margin-top: 5px;
+        font-size: 14px;
+      }
+
+      button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease; /* Add a smooth transition effect */
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      .bottom {
+        font-size: 14px;
+        margin-top: 10px;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      a.bottom:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+
+  <body>
+   
+  </body>
+  </html>
+  -->

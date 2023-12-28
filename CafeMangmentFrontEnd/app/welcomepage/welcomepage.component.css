@@ -1,0 +1,234 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Set your desired background color */
+    padding: 10px 20px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Adjust as needed */
+}
+
+.logo img {
+    max-width: 150px; /* Set your desired max-width for the image */
+    margin-right: 10px; /* Adjust as needed */
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 1.5em; 
+    content: Managemt ;
+}
+
+.logo h1 b{
+    color: #ff511c;
+}
+
+.nav p {
+    margin: 0 20px;
+    font-weight: bold;
+}
+
+.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav li {
+   
+    margin-left: 25px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #333; /* Set your desired text color */
+    font-weight: bold;
+}
+
+.button-container {
+    display: flex;
+}
+
+.login-button{
+   
+    margin-left: 200px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff; /* Set your desired text color */
+    background-color: #ff511c ; /* Set your desired background color */
+    border-radius: 5px;
+}
+
+.signup-button {
+    
+    margin-left: 180px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff; /* Set your desired text color */
+    background-color: #ff511c ; /* Set your desired background color */
+    border-radius: 5px;
+}
+
+.adminlogin-button{
+    margin-left: 180px;
+    padding: 10px 20px;
+    color: #ffff;
+    background-color: #ff511c;
+    border-radius: 5px;
+
+}
+
+
+
+.content .content-left{
+    display: block;
+    width: 100%;
+}
+
+.content .content-left .info{
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content .content-left .info h2{
+    font-size: 60px;
+    font-family: sans-serif;
+    margin-bottom: 30px;
+}
+
+.content .content-right img{
+
+    display: block;
+    margin-right: 10px;
+    bottom: 50px;
+    right: 0;
+    width: 500px;
+    user-select: none;
+    height: auto;
+    position: absolute;
+    animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+
+}
+
+.content .content-left .info p{
+    font-size: 23px;
+    line-height: 2pc;
+    margin-bottom:30px;
+    font-family: sans-serif;
+}
+
+.content .content-left a{
+    padding: 10px 20 px;
+    background-color: #ff511c;
+    color: hsl(0, 11%, 2%);
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size:larger;
+    padding: 10px;
+
+}
+
+.category{
+    width: 100%;
+    display: flex;
+    margin-bottom: 150px;
+    justify-content: center;
+}
+
+.category .list-items{
+    width: 90%;
+    position: relative;
+    margin-bottom: 90px;
+}
+.category .list-items h1{
+    font-size: 20px;
+    font-weight: 600;
+    font-family: sans-serif;
+    margin-bottom: 90px;
+}
+
+.category .list-items .card-list{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.category .list-items .card-list .card{
+    width: 200px;
+    height: auto;
+    display: block;
+    padding: 10PX;
+     border-radius: 10px;
+     position: relative;
+     background:hsl(0, 0%, 3%);
+    outline: 2PX solid hsl(300, 4%, 5%);
+}
+
+.category .card-list .card img {
+    width: 100px;
+    height: auto;
+    bottom: 140px;
+    left: 50px;
+    object-fit: cover;
+    object-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    box-shadow: 0 20px 20px #faad96;
+    border-radius: 50%;
+
+}
+
+.category .card-list .card .food-title{
+    padding:40px 0 10px;
+
+}
+
+.category .card-list .card .food-title h1{
+    text-align: center;
+    font-weight: bold;
+    font-size: 10px;
+    font-family: sans-serif;
+}
+
+.category .card .desc-food p{
+    font-size: 13px;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 20px;
+    font-family: sans-serif;
+}
+
+.category .card .price{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
